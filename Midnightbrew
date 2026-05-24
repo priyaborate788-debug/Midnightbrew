@@ -1,0 +1,965 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Midnight Brew Co. | Late Night Cafe in Koregaon Park, Pune — Open Till 2 AM</title>
+  <meta name="description" content="Midnight Brew Co. is a quiet, aesthetic late-night cafe in Koregaon Park, Pune. Open till 2 AM daily. Good coffee, pasta, waffles — starting ₹140. Work-friendly seating, charging points, lo-fi music."/>
+  <meta name="robots" content="index, follow"/>
+  <link rel="canonical" href="https://midnightbrewco.in/late-night-cafe-koregaon-park-pune"/>
+  <meta property="og:title" content="Midnight Brew Co. | Late Night Cafe in Koregaon Park Pune"/>
+  <meta property="og:description" content="Open till 2 AM. Coffee from ₹140. Quiet, work-friendly, aesthetic. Lane 7, near Osho Garden, Koregaon Park."/>
+  <meta property="og:type" content="website"/>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "CafeOrCoffeeShop",
+    "name": "Midnight Brew Co.",
+    "description": "Late night cafe in Koregaon Park, Pune open till 2 AM. Coffee, pasta, waffles. Quiet, work-friendly ambience with lo-fi music and charging points.",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Lane 7, near Osho Garden",
+      "addressLocality": "Koregaon Park",
+      "addressRegion": "Pune",
+      "postalCode": "411001",
+      "addressCountry": "IN"
+    },
+    "telephone": "+919000000000",
+    "openingHours": "Mo-Su 17:00-02:00",
+    "priceRange": "₹₹",
+    "servesCuisine": ["Coffee","Desserts","Pasta","Sandwiches"],
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.5",
+      "reviewCount": "500"
+    }
+  }
+  </script>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;0,900;1,400&family=DM+Sans:opsz,wght@9..40,300;9..40,400;9..40,500&family=Space+Mono:wght@700&display=swap" rel="stylesheet"/>
+
+  <style>
+    /* ─── TOKENS ─── */
+    :root {
+      --black:   #080810;
+      --surface: #0f0e20;
+      --card:    #13122a;
+      --border:  rgba(130,90,255,0.14);
+      --neon:    #9b5cff;
+      --pink:    #ff3cac;
+      --green:   #22c55e;
+      --gold:    #d4a84b;
+      --white:   #ede8ff;
+      --muted:   #7c7a9e;
+      --radius:  12px;
+    }
+
+    *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+    html { scroll-behavior: smooth; font-size: 16px; }
+
+    body {
+      background: var(--black);
+      color: var(--white);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    /* ─── UTILITY ─── */
+    .container { max-width: 1100px; margin: 0 auto; padding: 0 5%; }
+    .label { font-size: .68rem; letter-spacing: .2em; text-transform: uppercase; color: var(--neon); margin-bottom: .6rem; display: block; }
+    .section-title { font-family: 'Playfair Display', serif; font-size: clamp(1.75rem, 4vw, 2.6rem); font-weight: 700; line-height: 1.18; margin-bottom: .9rem; }
+    .section-sub { color: var(--muted); font-size: .95rem; max-width: 520px; margin-bottom: 2.5rem; }
+
+    /* Reveal */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s ease, transform .6s ease; }
+    .reveal.on { opacity: 1; transform: none; }
+
+    /* ─── NAV ─── */
+    nav {
+      position: fixed; top: 0; left: 0; right: 0; z-index: 900;
+      background: rgba(8,8,16,.92); backdrop-filter: blur(16px);
+      border-bottom: 1px solid var(--border);
+      padding: 0 5%;
+      display: flex; align-items: center; justify-content: space-between;
+      height: 62px;
+    }
+    .nav-logo { font-family: 'Playfair Display', serif; font-weight: 700; font-size: 1.18rem; color: var(--white); text-decoration: none; }
+    .nav-logo b { color: var(--neon); font-weight: 700; }
+    .nav-links { display: flex; align-items: center; gap: 1.6rem; list-style: none; }
+    .nav-links a { font-size: .78rem; letter-spacing: .1em; text-transform: uppercase; color: var(--muted); text-decoration: none; transition: color .2s; }
+    .nav-links a:hover { color: var(--white); }
+
+    .btn { display: inline-flex; align-items: center; gap: .5rem; padding: .72rem 1.5rem; border-radius: 100px; font-size: .86rem; font-weight: 500; text-decoration: none; cursor: pointer; border: none; transition: transform .25s, box-shadow .25s, background .25s; font-family: 'DM Sans', sans-serif; }
+    .btn:hover { transform: translateY(-2px); }
+    .btn-primary { background: var(--neon); color: #fff; box-shadow: 0 4px 20px rgba(155,92,255,.3); }
+    .btn-primary:hover { background: #8a4eee; box-shadow: 0 6px 28px rgba(155,92,255,.45); }
+    .btn-whatsapp { background: #25D366; color: #fff; box-shadow: 0 4px 18px rgba(37,211,102,.3); }
+    .btn-whatsapp:hover { background: #1fb959; box-shadow: 0 6px 26px rgba(37,211,102,.45); }
+    .btn-outline { background: transparent; color: var(--white); border: 1px solid rgba(155,92,255,.4); }
+    .btn-outline:hover { background: rgba(155,92,255,.08); border-color: var(--neon); }
+    .btn-sm { padding: .52rem 1.1rem; font-size: .8rem; }
+
+    .hamburger { display: none; flex-direction: column; gap: 5px; background: none; border: none; cursor: pointer; padding: 4px; }
+    .hamburger span { width: 22px; height: 1.5px; background: var(--white); display: block; }
+    .mob-overlay { display: none; position: fixed; inset: 0; background: rgba(8,8,16,.97); z-index: 950; flex-direction: column; align-items: center; justify-content: center; gap: 2rem; }
+    .mob-overlay.open { display: flex; }
+    .mob-overlay a { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--white); text-decoration: none; }
+    .mob-close { position: absolute; top: 1.2rem; right: 1.4rem; background: none; border: none; color: var(--white); font-size: 1.5rem; cursor: pointer; }
+    /* ─── HERO ─── */
+    #hero {
+      min-height: 100svh;
+      display: flex; flex-direction: column; justify-content: center;
+      padding: 100px 5% 60px;
+      position: relative; overflow: hidden;
+    }
+    .hero-bg {
+      position: absolute; inset: 0; z-index: 0;
+      background:
+        radial-gradient(ellipse 70% 60% at 50% 0%, rgba(20,14,60,.98) 0%, transparent 65%),
+        radial-gradient(ellipse 40% 40% at 80% 80%, rgba(155,92,255,.1) 0%, transparent 55%),
+        var(--black);
+    }
+    .hero-grid {
+      position: absolute; inset: 0; z-index: 0;
+      background-image: linear-gradient(rgba(155,92,255,.025) 1px, transparent 1px), linear-gradient(90deg, rgba(155,92,255,.025) 1px, transparent 1px);
+      background-size: 52px 52px;
+    }
+    .hero-inner { position: relative; z-index: 2; max-width: 720px; }
+
+    /* Audience badge */
+    .audience-badge {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(34,197,94,.1); border: 1px solid rgba(34,197,94,.28);
+      border-radius: 100px; padding: .32rem .9rem;
+      font-size: .72rem; letter-spacing: .12em; text-transform: uppercase; color: var(--green);
+      margin-bottom: 1.5rem;
+      opacity: 0; animation: fadeUp .7s ease .15s forwards;
+    }
+    .live { width: 6px; height: 6px; background: var(--green); border-radius: 50%; animation: blink 1.8s infinite; }
+    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:.3} }
+
+    h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2.4rem, 6.5vw, 4.8rem);
+      font-weight: 900; line-height: 1.08; letter-spacing: -.02em;
+      margin-bottom: 1.2rem;
+      opacity: 0; animation: fadeUp .8s ease .28s forwards;
+    }
+    h1 em { font-style: italic; color: var(--neon); }
+
+    .hero-sub {
+      font-size: clamp(.95rem, 2vw, 1.12rem);
+      color: var(--muted); margin-bottom: 1rem; line-height: 1.72; max-width: 560px;
+      opacity: 0; animation: fadeUp .8s ease .42s forwards;
+    }
+
+    /* Offer pill in hero */
+    .hero-offer {
+      display: inline-flex; align-items: center; gap: .5rem;
+      background: rgba(212,168,75,.1); border: 1px solid rgba(212,168,75,.3);
+      border-radius: 100px; padding: .32rem .9rem;
+      font-size: .78rem; color: var(--gold);
+      margin-bottom: 2rem;
+      opacity: 0; animation: fadeUp .8s ease .54s forwards;
+    }
+    .hero-offer strong { font-weight: 500; }
+
+    .hero-actions {
+      display: flex; flex-wrap: wrap; gap: .8rem; align-items: center;
+      opacity: 0; animation: fadeUp .8s ease .65s forwards;
+    }
+
+    /* Quick proof strip below CTA */
+    .hero-proof {
+      display: flex; flex-wrap: wrap; gap: 1.5rem; margin-top: 3rem; padding-top: 2rem;
+      border-top: 1px solid var(--border);
+      opacity: 0; animation: fadeUp .8s ease .8s forwards;
+    }
+    .proof-item { display: flex; align-items: center; gap: .5rem; font-size: .82rem; color: var(--muted); }
+    .proof-icon { font-size: 1.05rem; }
+    .proof-item strong { color: var(--white); font-weight: 500; }
+
+    @keyframes fadeUp { from{opacity:0;transform:translateY(18px)} to{opacity:1;transform:none} }
+
+    /* ─── ANNOUNCEMENT BAR ─── */
+    .ann-bar {
+      background: rgba(155,92,255,.1); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border);
+      padding: .65rem 5%; text-align: center;
+      font-size: .8rem; color: var(--muted);
+    }
+    .ann-bar strong { color: var(--gold); font-weight: 500; }
+    .ann-bar a { color: var(--neon); text-decoration: none; font-weight: 500; }
+
+    /* ─── QUICK PICKS (conversion shortcut) ─── */
+    #quick-picks { padding: 4rem 5%; }
+    .qp-header { display: flex; align-items: flex-end; justify-content: space-between; flex-wrap: wrap; gap: 1rem; margin-bottom: 1.8rem; }
+    .qp-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 1rem; }
+
+    .qp-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 1.3rem; display: flex; flex-direction: column; gap: .6rem;
+      transition: border-color .25s, transform .25s;
+    }
+    .qp-card:hover { border-color: rgba(155,92,255,.35); transform: translateY(-3px); }
+    .qp-emoji { font-size: 1.6rem; }
+    .qp-name { font-size: .96rem; font-weight: 500; }
+    .qp-why { font-size: .76rem; color: var(--muted); line-height: 1.55; }
+    .qp-bottom { display: flex; align-items: center; justify-content: space-between; margin-top: auto; padding-top: .4rem; }
+    .qp-price { font-family: 'Space Mono', monospace; font-size: 1.05rem; color: var(--neon); font-weight: 700; }
+    .qp-tag { font-size: .6rem; letter-spacing: .06em; padding: .15rem .5rem; border-radius: 100px; font-weight: 500; }
+    .qt-best { background: rgba(212,168,75,.12); color: var(--gold); border: 1px solid rgba(212,168,75,.25); }
+    .qt-hot  { background: rgba(255,60,172,.1);  color: var(--pink);  border: 1px solid rgba(255,60,172,.22); }
+    .qt-new  { background: rgba(0,240,255,.07);  color: #00f0ff;      border: 1px solid rgba(0,240,255,.18); }
+
+    /* ─── COMBO BANNER ─── */
+    #combo { padding: 0 5% 4rem; }
+    .combo-card {
+      background: linear-gradient(130deg, rgba(155,92,255,.14), rgba(255,60,172,.08));
+      border: 1px solid rgba(155,92,255,.35);
+      border-radius: 14px; padding: 2.4rem 2.8rem;
+      display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1.8rem;
+      position: relative; overflow: hidden;
+    }
+    .combo-card::after { content:''; position:absolute; top:-60px; right:-60px; width:260px; height:260px; background:radial-gradient(circle,rgba(155,92,255,.12),transparent 70%); pointer-events:none; }
+    .c-eyebrow { font-size:.65rem; letter-spacing:.18em; text-transform:uppercase; color:var(--pink); margin-bottom:.5rem; display:block; }
+    .c-title { font-family:'Playfair Display',serif; font-size:clamp(1.4rem,3vw,2rem); font-weight:700; margin-bottom:.35rem; }
+    .c-desc { font-size:.86rem; color:var(--muted); margin-bottom:1rem; }
+    .c-pricing { display:flex; align-items:baseline; gap:.8rem; }
+    .c-old { font-size:1.1rem; color:var(--muted); text-decoration:line-through; }
+    .c-new { font-family:'Space Mono',monospace; font-size:2.4rem; font-weight:700; color:var(--neon); line-height:1; }
+    .c-save { font-size:.72rem; color:var(--pink); background:rgba(255,60,172,.1); border:1px solid rgba(255,60,172,.25); padding:.18rem .55rem; border-radius:100px; }
+    .c-note { font-size:.72rem; color:var(--muted); margin-top:.5rem; }
+        /* ─── FULL MENU ─── */
+    #menu { padding: 5rem 5%; }
+
+    .menu-tabs {
+      display: flex; gap: .4rem; flex-wrap: wrap;
+      position: sticky; top: 62px; z-index: 100;
+      background: rgba(8,8,16,.94); backdrop-filter: blur(12px);
+      padding: .85rem 0; margin-bottom: 2.2rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .tab { background: transparent; border: 1px solid var(--border); color: var(--muted); padding: .42rem 1rem; border-radius: 100px; font-size: .74rem; cursor: pointer; transition: all .25s; font-family: 'DM Sans', sans-serif; white-space: nowrap; }
+    .tab:hover, .tab.on { background: var(--neon); border-color: var(--neon); color: #fff; }
+
+    .menu-sec { display: none; }
+    .menu-sec.on { display: block; }
+
+    .menu-sec-head { font-family: 'Playfair Display', serif; font-size: 1.2rem; font-weight: 700; padding-bottom: .7rem; border-bottom: 1px solid var(--border); margin-bottom: 1.2rem; }
+    .sub-label { font-size: .62rem; letter-spacing: .18em; text-transform: uppercase; color: var(--neon); margin: 1.4rem 0 .8rem; }
+    .menu-note { font-size: .75rem; color: var(--muted); margin-bottom: 1.2rem; }
+
+    .mgrid { display: grid; grid-template-columns: repeat(2,1fr); gap: .75rem; }
+
+    .mcard {
+      background: var(--card); border: 1px solid var(--border);
+      border-radius: var(--radius); padding: 1rem 1.2rem;
+      display: flex; justify-content: space-between; align-items: flex-start; gap: .9rem;
+      transition: border-color .25s, transform .25s;
+    }
+    .mcard:hover { border-color: rgba(155,92,255,.35); transform: translateY(-2px); }
+    .mcard.sp { background: rgba(155,92,255,.05); }
+    .mc-l { flex: 1; }
+    .mc-name { font-size: .9rem; font-weight: 500; margin-bottom: .25rem; display: flex; align-items: center; gap: .35rem; flex-wrap: wrap; }
+    .mc-desc { font-size: .72rem; color: var(--muted); line-height: 1.5; }
+    .mc-price { font-family: 'Space Mono', monospace; font-size: .95rem; color: var(--neon); font-weight: 700; white-space: nowrap; flex-shrink: 0; }
+
+    .mtag { font-size: .56rem; padding: .1rem .42rem; border-radius: 100px; font-weight: 500; }
+    .mtb { background: rgba(212,168,75,.12); color: var(--gold); border: 1px solid rgba(212,168,75,.25); }
+    .mth { background: rgba(255,60,172,.1); color: var(--pink); border: 1px solid rgba(255,60,172,.22); }
+    .mtn { background: rgba(0,240,255,.07); color: #00f0ff; border: 1px solid rgba(0,240,255,.18); }
+
+    .menu-cta { padding: 2rem 0 .5rem; text-align: center; }
+    .menu-cta p { font-size: .8rem; color: var(--muted); margin-bottom: .8rem; }
+
+    /* ─── WHY US ─── */
+    #why { background: var(--surface); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 5rem 5%; }
+    .why-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.1rem; margin-top: 2.5rem; }
+    .why-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;
+      transition: border-color .25s, transform .25s;
+    }
+    .why-card:hover { border-color: rgba(155,92,255,.35); transform: translateY(-3px); }
+    .why-icon { font-size: 1.6rem; margin-bottom: .8rem; display: block; }
+    .why-title { font-size: .94rem; font-weight: 500; margin-bottom: .3rem; }
+    .why-desc { font-size: .78rem; color: var(--muted); line-height: 1.65; }
+
+    /* ─── VISIT INFO (practical) ─── */
+    #visit-info { padding: 5rem 5%; }
+    .visit-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 3.5rem; align-items: start; margin-top: 2.5rem; }
+    .info-rows { display: flex; flex-direction: column; gap: 1.2rem; }
+    .info-row { display: flex; gap: .9rem; align-items: flex-start; }
+    .info-icon { width: 36px; height: 36px; background: rgba(155,92,255,.09); border: 1px solid rgba(155,92,255,.18); border-radius: 8px; display: flex; align-items: center; justify-content: center; font-size: .95rem; flex-shrink: 0; }
+    .info-text strong { display: block; font-size: .84rem; font-weight: 500; margin-bottom: .15rem; }
+    .info-text span { font-size: .78rem; color: var(--muted); line-height: 1.65; }
+    .map-box {
+      border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/3;
+      background: var(--card); border: 1px solid var(--border);
+      display: flex; flex-direction: column; align-items: center; justify-content: center; gap: .7rem;
+      color: var(--muted); font-size: .78rem; position: relative;
+    }
+    .map-box::before { content:''; position:absolute; inset:0; background:linear-gradient(rgba(155,92,255,.022) 1px,transparent 1px),linear-gradient(90deg,rgba(155,92,255,.022) 1px,transparent 1px); background-size:26px 26px; }
+    .map-pin { font-size: 2.2rem; }
+    .map-note { font-size: .62rem; color: var(--neon); letter-spacing: .09em; }
+
+    /* ─── REVIEWS ─── */
+    #reviews { background: var(--surface); border-top: 1px solid var(--border); padding: 5rem 5%; }
+    .reviews-meta { display: flex; align-items: center; gap: 1.5rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .rating-big { font-family: 'Space Mono', monospace; font-size: 3rem; font-weight: 700; color: var(--white); line-height: 1; }
+    .rating-right { }
+    .stars-row { color: var(--gold); font-size: 1.1rem; letter-spacing: .05em; }
+    .rating-count { font-size: .76rem; color: var(--muted); margin-top: .2rem; }
+    .rgrid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px,1fr)); gap: 1rem; }
+    .rcard {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.4rem;
+      transition: border-color .25s, transform .25s;
+    }
+    .rcard:hover { border-color: rgba(155,92,255,.28); transform: translateY(-2px); }
+    .rcard-head { display: flex; align-items: center; gap: .65rem; margin-bottom: .9rem; }
+    .ravatar { width: 32px; height: 32px; border-radius: 50%; background: linear-gradient(130deg,var(--neon),var(--pink)); display: flex; align-items: center; justify-content: center; font-size: .8rem; font-weight: 700; color: #fff; flex-shrink: 0; }
+    .rname { font-size: .84rem; font-weight: 500; }
+    .rrating { font-size: .7rem; color: var(--gold); }
+    .rtext { font-size: .82rem; color: var(--muted); line-height: 1.68; }
+    .rcontext { display: inline-block; margin-top: .65rem; font-size: .68rem; color: var(--muted); background: rgba(255,255,255,.04); padding: .15rem .5rem; border-radius: 100px; }
+
+    /* ─── OFFERS ─── */
+    #offers { padding: 5rem 5%; }
+    .offers-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1rem; }
+    .offer-card {
+      background: var(--card); border: 1px solid var(--border); border-radius: var(--radius); padding: 1.5rem;
+      position: relative; overflow: hidden;
+      transition: border-color .25s, transform .25s;
+    }
+    .offer-card:hover { border-color: rgba(155,92,255,.35); transform: translateY(-3px); }
+    .offer-card::before { content:''; position:absolute; top:0;right:0; width:90px;height:90px; background:radial-gradient(circle,rgba(155,92,255,.08),transparent 70%); }
+    .offer-icon { font-size: 1.6rem; margin-bottom: .7rem; display: block; }
+    .offer-title { font-size: .95rem; font-weight: 500; margin-bottom: .3rem; }
+    .offer-desc { font-size: .78rem; color: var(--muted); line-height: 1.65; margin-bottom: .8rem; }
+    .offer-cta { display: inline-block; font-size: .72rem; color: var(--neon); font-weight: 500; text-decoration: none; }
+    .offer-cta:hover { text-decoration: underline; }
+
+    /* ─── SEO PARAGRAPH ─── */
+    #seo-section { padding: 4rem 5%; border-top: 1px solid var(--border); }
+    .seo-text { max-width: 760px; }
+    .seo-text h2 { font-family: 'Playfair Display', serif; font-size: 1.35rem; font-weight: 700; margin-bottom: .9rem; }
+    .seo-text p { font-size: .86rem; color: var(--muted); line-height: 1.8; margin-bottom: .75rem; }
+
+    /* ─── FINAL CTA ─── */
+    #fcta { padding: 5.5rem 5%; text-align: center; background: var(--surface); border-top: 1px solid var(--border); position: relative; overflow: hidden; }
+    #fcta::before { content:''; position:absolute; top:50%;left:50%; transform:translate(-50%,-50%); width:500px;height:240px; background:radial-gradient(ellipse,rgba(155,92,255,.13),transparent 70%); pointer-events:none; }
+    .fcta-title { font-family:'Playfair Display',serif; font-size:clamp(1.8rem,5vw,3.2rem); font-weight:900; margin-bottom:.7rem; position:relative; }
+    .fcta-sub { color:var(--muted); font-size:.96rem; margin-bottom:2rem; position:relative; max-width:480px; margin-left:auto; margin-right:auto; }
+    .fcta-actions { display:flex; gap:.9rem; justify-content:center; flex-wrap:wrap; position:relative; }
+    .fcta-note { font-size:.72rem; color:var(--muted); margin-top:1rem; position:relative; }
+
+    /* ─── FOOTER ─── */
+    footer { background: #040409; border-top: 1px solid var(--border); padding: 2rem 5%; }
+    .footer-inner { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1.2rem; }
+    .flogo { font-family:'Playfair Display',serif; font-size:1.1rem; font-weight:700; }
+    .flogo b { color:var(--neon); }
+    .fmeta { text-align: center; }
+    .open-pill { display:inline-flex; align-items:center; gap:.38rem; background:rgba(34,197,94,.08); border:1px solid rgba(34,197,94,.22); border-radius:100px; padding:.22rem .7rem; font-size:.65rem; color:var(--green); }
+    .faddr { font-size:.68rem; color:var(--muted); margin-top:.4rem; }
+    .fright { font-size:.68rem; color:var(--muted); text-align:right; line-height:1.8; }
+
+    /* ─── FLOATING CTA ─── */
+    .fab {
+      position: fixed; bottom: 1.6rem; right: 1.6rem; z-index: 800;
+      display: flex; align-items: center; gap: .5rem;
+      background: #25D366; color: #fff;
+      padding: .72rem 1.2rem; border-radius: 100px;
+      font-size: .82rem; font-weight: 500; text-decoration: none;
+      box-shadow: 0 4px 20px rgba(37,211,102,.38);
+      transition: transform .25s, box-shadow .25s;
+    }
+    .fab:hover { transform: translateY(-3px); box-shadow: 0 8px 28px rgba(37,211,102,.5); }
+        /* ─── RESPONSIVE ─── */
+    @media (max-width: 768px) {
+      .nav-links { display: none; }
+      .hamburger { display: flex; }
+      .mgrid { grid-template-columns: 1fr; }
+      .visit-grid { grid-template-columns: 1fr; gap: 2rem; }
+      .combo-card { flex-direction: column; }
+      .footer-inner { flex-direction: column; text-align: center; }
+      .fright { text-align: center; }
+      .fab .fab-text { display: none; }
+      .fab { padding: .85rem; border-radius: 50%; }
+    }
+    @media (max-width: 480px) {
+      .hero-actions { flex-direction: column; }
+      .btn { width: 100%; justify-content: center; }
+      .qp-grid { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="fab" target="_blank" rel="noopener" aria-label="Order on WhatsApp">
+  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.67 4.67 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+  <span class="fab-text">Order on WhatsApp</span>
+</a>
+
+<!-- Mobile Overlay -->
+<div class="mob-overlay" id="mob">
+  <button class="mob-close" id="mobClose">✕</button>
+  <a href="#menu" onclick="closeMob()">Menu</a>
+  <a href="#why" onclick="closeMob()">Why Us</a>
+  <a href="#offers" onclick="closeMob()">Offers</a>
+  <a href="#reviews" onclick="closeMob()">Reviews</a>
+  <a href="#visit-info" onclick="closeMob()">Visit Us</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="#" class="nav-logo">Midnight <b>Brew</b> Co.</a>
+  <ul class="nav-links">
+    <li><a href="#menu">Menu</a></li>
+    <li><a href="#why">Why Us</a></li>
+    <li><a href="#offers">Offers</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#visit-info">Visit</a></li>
+    <li>
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp btn-sm" target="_blank" rel="noopener">
+        <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.67 4.67 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order Now
+      </a>
+    </li>
+  </ul>
+  <button class="hamburger" id="ham" aria-label="Menu"><span></span><span></span><span></span></button>
+</nav>
+
+<!-- ─── HERO ─── -->
+<section id="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-grid"></div>
+
+  <div class="hero-inner">
+    <div class="audience-badge">
+      <span class="live"></span>
+      Open right now · Till 2 AM tonight
+    </div>
+
+    <h1>
+      Pune's only cafe<br/>
+      still serving at <em>midnight</em>
+    </h1>
+
+    <p class="hero-sub">
+      Late-night cafe in Koregaon Park, Pune — quiet enough to work in, dim enough for a date. Coffee starts at ₹140. Food till 2 AM, every night.
+    </p>
+
+    <div class="hero-offer">
+      🎉 <strong>First visit?</strong> Get 10% off your order — mention it on WhatsApp
+    </div>
+
+    <div class="hero-actions">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank" rel="noopener">
+        <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.67 4.67 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+        Order on WhatsApp
+      </a>
+      <a href="#menu" class="btn btn-outline">See Full Menu</a>
+    </div>
+
+    <div class="hero-proof">
+      <div class="proof-item"><span class="proof-icon">🌙</span><span><strong>Open till 2 AM</strong> — every night, including weekends</span></div>
+      <div class="proof-item"><span class="proof-icon">💻</span><span><strong>Work-friendly</strong> — charging points, stable WiFi, quiet after 11 PM</span></div>
+      <div class="proof-item"><span class="proof-icon">📍</span><span><strong>Lane 7, KP</strong> — near Osho Garden, Koregaon Park</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── ANN BAR ─── -->
+<div class="ann-bar">
+  🍫 Order any 2 drinks → <strong>get a free brownie.</strong> &nbsp;|&nbsp; Midnight Combo: Coffee + Waffle for <strong>₹249</strong> (was ₹400) &nbsp;·&nbsp; <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20the%20Midnight%20Combo" target="_blank">Grab it →</a>
+</div>
+
+<!-- ─── QUICK PICKS ─── -->
+<section id="quick-picks">
+  <div class="qp-header reveal">
+    <div>
+      <span class="label">For when you can't decide</span>
+      <h2 class="section-title" style="margin-bottom:0;">Quick Picks</h2>
+    </div>
+    <a href="#menu" class="btn btn-outline btn-sm">Full Menu</a>
+  </div>
+
+  <div class="qp-grid">
+    <div class="qp-card reveal">
+      <div class="qp-emoji">☕</div>
+      <div class="qp-name">Hazelnut Latte</div>
+      <div class="qp-why">Smooth, not too sweet. Our most reordered drink by people working late.</div>
+      <div class="qp-bottom">
+        <span class="qp-price">₹220</span>
+        <span class="qp-tag qt-best">⭐ Bestseller</span>
+      </div>
+    </div>
+    <div class="qp-card reveal">
+      <div class="qp-emoji">🧋</div>
+      <div class="qp-name">Cold Coffee</div>
+      <div class="qp-why">Strong, chilled, no-nonsense. Most ordered drink at midnight.</div>
+      <div class="qp-bottom">
+        <span class="qp-price">₹180</span>
+        <span class="qp-tag qt-hot">🔥 Most Ordered</span>
+      </div>
+    </div>
+    <div class="qp-card reveal">
+      <div class="qp-emoji">🧇</div>
+      <div class="qp-name">Chocolate Waffles</div>
+      <div class="qp-why">Warm, crispy, chocolate-drizzled. Pairs perfectly with anything cold.</div>
+      <div class="qp-bottom">
+        <span class="qp-price">₹220</span>
+        <span class="qp-tag qt-best">⭐ Bestseller</span>
+      </div>
+    </div>
+    <div class="qp-card reveal">
+      <div class="qp-emoji">🍝</div>
+      <div class="qp-name">Pink Sauce Pasta</div>
+      <div class="qp-why">The most-ordered food item. Rich, filling, available till 2 AM.</div>
+      <div class="qp-bottom">
+        <span class="qp-price">₹280</span>
+        <span class="qp-tag qt-hot">🔥 Most Ordered</span>
+      </div>
+    </div>
+    <div class="qp-card reveal">
+      <div class="qp-emoji">🧃</div>
+      <div class="qp-name">Midnight Nitro Cold Brew</div>
+      <div class="qp-why">Nitrogen-infused, ultra smooth. Something different if you come often.</div>
+      <div class="qp-bottom">
+        <span class="qp-price">₹260</span>
+        <span class="qp-tag qt-new">🆕 New</span>
+      </div>
+    </div>
+    <div class="qp-card reveal">
+      <div class="qp-emoji">🥪</div>
+      <div class="qp-name">Grilled Cheese Sandwich</div>
+      <div class="qp-why">Quick, hot, filling. The go-to if you need something fast at 1 AM.</div>
+      <div class="qp-bottom">
+        <span class="qp-price">₹160</span>
+        <span class="qp-tag qt-hot">🔥 Most Ordered</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── MIDNIGHT COMBO ─── -->
+<section id="combo">
+  <div class="combo-card reveal">
+    <div>
+      <span class="c-eyebrow">🔥 Tonight's Deal</span>
+      <h2 class="c-title">Midnight Combo</h2>
+      <p class="c-desc">Cold Coffee + Chocolate Waffle — ordered together, priced better</p>
+      <div class="c-pricing">
+        <span class="c-old">₹400</span>
+        <span class="c-new">₹249</span>
+        <span class="c-save">Save ₹151</span>
+      </div>
+      <p class="c-note">Available every night till 2 AM. Mention "Midnight Combo" on WhatsApp.</p>
+    </div>
+    <div style="flex-shrink:0;">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20the%20Midnight%20Combo%20-%20Coffee%20%2B%20Waffle%20for%20%E2%82%B9249" class="btn btn-primary" target="_blank" rel="noopener">
+        Order This Deal →
+      </a>
+      <p style="font-size:.7rem;color:var(--muted);margin-top:.6rem;text-align:center;">Reply in under 5 min after 7 PM</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── FULL MENU ─── -->
+<section id="menu">
+  <span class="label reveal">Full Menu</span>
+  <h2 class="section-title reveal">What's Brewing Tonight</h2>
+  <p class="section-sub reveal">Coffee from ₹120. Food available till 2 AM. Everything made fresh.</p>
+
+  <div class="menu-tabs">
+    <button class="tab on" data-t="best">⭐ Bestsellers</button>
+    <button class="tab" data-t="hot">🔥 Most Ordered</button>
+    <button class="tab" data-t="new">🆕 New</button>
+    <button class="tab" data-t="coffee">☕ Coffee</button>
+    <button class="tab" data-t="spec">✨ Specialty</button>
+    <button class="tab" data-t="nc">🍵 Non-Coffee</button>
+    <button class="tab" data-t="food">🍝 Food</button>
+    <button class="tab" data-t="dessert">🍰 Desserts</button>
+  </div>
+    <!-- MOST ORDERED -->
+  <div class="menu-sec" id="t-hot">
+    <div class="menu-sec-head">🔥 Most Ordered — What Pune Regulars Pick</div>
+    <p class="menu-note">These are the items people come back for.</p>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Cold Coffee <span class="mtag mth">🔥 #1 Ordered</span></div><div class="mc-desc">The default choice after midnight for a reason</div></div><div class="mc-price">₹180</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Grilled Cheese Sandwich <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Hot, fast, melty — ready in under 10 minutes</div></div><div class="mc-price">₹160</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Pink Sauce Pasta <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Creamy meets tangy — filling enough for a full meal</div></div><div class="mc-price">₹280</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Peach Iced Tea <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Light, fruity, good for long sit-ins</div></div><div class="mc-price">₹180</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- NEW -->
+  <div class="menu-sec" id="t-new">
+    <div class="menu-sec-head">🆕 Just Added This Week</div>
+    <p class="menu-note">Try these before they go on the regular menu.</p>
+    <div class="mgrid">
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Midnight Nitro Cold Brew <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Nitrogen-infused, ultra smooth, zero bitterness</div></div><div class="mc-price">₹260</div></div>
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Coconut Iced Latte <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Espresso with creamy coconut milk over ice</div></div><div class="mc-price">₹240</div></div>
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Oreo Waffle Sundae <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Waffle + Oreo crumble + ice cream scoop</div></div><div class="mc-price">₹300</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Loaded Fries <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Peri Peri or Cheese — proper midnight snack</div></div><div class="mc-price">₹180</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- COFFEE -->
+  <div class="menu-sec" id="t-coffee">
+    <div class="menu-sec-head">☕ Coffee</div>
+    <p class="sub-label">Espresso Based</p>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Espresso</div><div class="mc-desc">Double shot, pure and clean</div></div><div class="mc-price">₹120</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Americano</div><div class="mc-desc">Espresso lengthened with hot water</div></div><div class="mc-price">₹140</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Cappuccino</div><div class="mc-desc">Equal parts espresso, milk, foam</div></div><div class="mc-price">₹180</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Latte</div><div class="mc-desc">Espresso with steamed milk, smooth</div></div><div class="mc-price">₹190</div></div>
+    </div>
+    <p class="sub-label">Flavoured Lattes</p>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Hazelnut Latte <span class="mtag mtb">⭐ Bestseller</span></div><div class="mc-desc">Smooth espresso with hazelnut flavour</div></div><div class="mc-price">₹220</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Caramel Latte</div><div class="mc-desc">Sweet caramel with espresso and milk</div></div><div class="mc-price">₹220</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Mocha</div><div class="mc-desc">Espresso, chocolate, steamed milk</div></div><div class="mc-price">₹230</div></div>
+    </div>
+    <p class="sub-label">Cold Coffee</p>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Cold Coffee <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Classic, chilled, strong — the midnight standard</div></div><div class="mc-price">₹180</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Cold Brew</div><div class="mc-desc">Slow-steeped 12 hours, smooth and low acid</div></div><div class="mc-price">₹200</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- SPECIALTY -->
+  <div class="menu-sec" id="t-spec">
+    <div class="menu-sec-head">✨ Specialty Drinks</div>
+    <p class="menu-note">Our premium, house-made creations — not available at other Koregaon Park cafes.</p>
+    <div class="mgrid">
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Midnight Nitro Cold Brew <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Nitrogen-infused, silky smooth, no sugar needed</div></div><div class="mc-price">₹260</div></div>
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Dark Chocolate Mocha</div><div class="mc-desc">Extra-rich, bitter dark chocolate — for real chocolate lovers</div></div><div class="mc-price">₹250</div></div>
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Coconut Iced Latte <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Espresso + coconut milk + ice — light and refreshing</div></div><div class="mc-price">₹240</div></div>
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Vanilla Cream Cold Brew</div><div class="mc-desc">Cold brew topped with house-made vanilla sweet cream</div></div><div class="mc-price">₹230</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- NON-COFFEE -->
+  <div class="menu-sec" id="t-nc">
+    <div class="menu-sec-head">🍵 Non-Coffee</div>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Hot Chocolate</div><div class="mc-desc">Rich, warm — good for cold nights in Pune</div></div><div class="mc-price">₹200</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Matcha Latte</div><div class="mc-desc">Earthy Japanese matcha with steamed milk</div></div><div class="mc-price">₹240</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Peach Iced Tea <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Fruity, light — ideal for long work sessions</div></div><div class="mc-price">₹180</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Lemon Iced Tea</div><div class="mc-desc">Tangy, refreshing, easy on the stomach late at night</div></div><div class="mc-price">₹170</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Mojito (Classic / Blueberry)</div><div class="mc-desc">Minty or berry-forward — non-alcoholic, refreshing</div></div><div class="mc-price">₹200</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- FOOD -->
+  <div class="menu-sec" id="t-food">
+    <div class="menu-sec-head">🍝 Food — Available Till 2 AM</div>
+    <p class="sub-label">Quick Bites</p>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Grilled Cheese Sandwich <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Golden, hot, ready in ~8 minutes</div></div><div class="mc-price">₹160</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Veg Club Sandwich</div><div class="mc-desc">Layered, filling — good for a full meal</div></div><div class="mc-price">₹200</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Chicken Sandwich</div><div class="mc-desc">Grilled chicken with fresh greens and sauce</div></div><div class="mc-price">₹240</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Garlic Bread</div><div class="mc-desc">Crispy, herbed, good alone or with pasta</div></div><div class="mc-price">₹140</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Cheese Garlic Bread</div><div class="mc-desc">Melted cheese on top — the upgraded version</div></div><div class="mc-price">₹180</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Loaded Fries <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Peri Peri or Cheese — proper late-night snack</div></div><div class="mc-price">₹180</div></div>
+    </div>
+    <p class="sub-label">Pasta</p>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">White Sauce Pasta <span class="mtag mtb">⭐ Bestseller</span></div><div class="mc-desc">Classic béchamel — creamy and filling</div></div><div class="mc-price">₹260</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Red Sauce Pasta</div><div class="mc-desc">Tomato-based, bold and tangy</div></div><div class="mc-price">₹240</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Pink Sauce Pasta <span class="mtag mth">🔥 Most Ordered</span></div><div class="mc-desc">Creamy + tangy mixed — the favourite for a reason</div></div><div class="mc-price">₹280</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Chicken Pasta</div><div class="mc-desc">Grilled chicken with choice of sauce</div></div><div class="mc-price">₹320</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+
+  <!-- DESSERTS -->
+  <div class="menu-sec" id="t-dessert">
+    <div class="menu-sec-head">🍰 Desserts</div>
+    <div class="mgrid">
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Chocolate Waffles <span class="mtag mtb">⭐ Bestseller</span></div><div class="mc-desc">Warm, crispy, chocolate drizzle — the one people come back for</div></div><div class="mc-price">₹220</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Nutella Waffles</div><div class="mc-desc">Waffles loaded with house Nutella spread</div></div><div class="mc-price">₹260</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Brownie + Ice Cream</div><div class="mc-desc">Warm fudgy brownie, cold vanilla scoop — get it free with 2 drinks</div></div><div class="mc-price">₹200</div></div>
+      <div class="mcard"><div class="mc-l"><div class="mc-name">Cheesecake (Slice)</div><div class="mc-desc">Dense, creamy, not overly sweet</div></div><div class="mc-price">₹220</div></div>
+      <div class="mcard sp"><div class="mc-l"><div class="mc-name">Oreo Waffle Sundae <span class="mtag mtn">🆕 New</span></div><div class="mc-desc">Waffle + Oreo crumble + ice cream — the indulgent option</div></div><div class="mc-price">₹300</div></div>
+    </div>
+    <div class="menu-cta">
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank">Order on WhatsApp →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WHY US ─── -->
+<section id="why">
+  <span class="label reveal">Why people come back</span>
+  <h2 class="section-title reveal">Different from Every Other Cafe in Koregaon Park</h2>
+  <p class="section-sub reveal">Most cafes in KP shut by 11 PM and get loud by 9. We're built differently.</p>
+
+  <div class="why-grid">
+    <div class="why-card reveal">
+      <span class="why-icon">🌙</span>
+      <div class="why-title">Open till 2 AM — actually</div>
+      <div class="why-desc">Not just on weekends. Every night, including Monday. Kitchen stays open. You won't be rushed out.</div>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🔇</span>
+      <div class="why-title">Quiet after 11 PM</div>
+      <div class="why-desc">No loud groups, no DJ nights. After 11, it's mostly people working or couples talking. Lo-fi plays at a level you can speak over.</div>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🔌</span>
+      <div class="why-title">Charging points at every table</div>
+      <div class="why-desc">Every seat has access to a plug point. You won't spend the night hunting for a socket like other cafes in Pune.</div>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">📶</span>
+      <div class="why-title">WiFi that actually works</div>
+      <div class="why-desc">Stable enough for video calls and uploads. Password at the counter — no awkward asking the staff three times.</div>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">👥</span>
+      <div class="why-title">Not crowded like the main strip</div>
+      <div class="why-desc">Lane 7 keeps us off the Koregaon Park main road traffic. You get a table. You don't wait 30 minutes for one.</div>
+    </div>
+    <div class="why-card reveal">
+      <span class="why-icon">🅿️</span>
+      <div class="why-title">Parking nearby</div>
+      <div class="why-desc">Lane 7 has street parking available after 9 PM when most of Koregaon Park clears out. Two-wheelers can park right outside.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── OFFERS ─── -->
+<section id="offers">
+  <span class="label reveal">Current Offers</span>
+  <h2 class="section-title reveal">Deals Worth Knowing About</h2>
+  <p class="section-sub reveal">These are available every night. No codes, no apps — just mention it on WhatsApp or at the counter.</p>
+
+  <div class="offers-grid">
+    <div class="offer-card reveal">
+      <span class="offer-icon">🎉</span>
+      <div class="offer-title">First Order — 10% Off</div>
+      <div class="offer-desc">New customer? Your entire first order gets 10% off. Works on dine-in and WhatsApp orders. Just mention it.</div>
+      <a href="https://wa.me/919000000000?text=Hi!%20First%20time%20ordering%20-%20can%20I%20get%2010%25%20off?" class="offer-cta" target="_blank">Claim on WhatsApp →</a>
+    </div>
+    <div class="offer-card reveal">
+      <span class="offer-icon">🍫</span>
+      <div class="offer-title">Free Brownie with 2 Drinks</div>
+      <div class="offer-desc">Order any 2 beverages — coffee, tea, anything — and we'll add a warm brownie. No minimum spend beyond that.</div>
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%202%20drinks%20and%20claim%20the%20free%20brownie" class="offer-cta" target="_blank">Order Now →</a>
+    </div>
+    <div class="offer-card reveal">
+      <span class="offer-icon">☕</span>
+      <div class="offer-title">Midnight Combo — ₹249</div>
+      <div class="offer-desc">Cold Coffee + Chocolate Waffle. Together ₹400, combo price ₹249. Available every night till 2 AM. Saving ₹151 on the pair.</div>
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20the%20Midnight%20Combo%20for%20%E2%82%B9249" class="offer-cta" target="_blank">Order the Combo →</a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── REVIEWS ─── -->
+<section id="reviews">
+  <span class="label reveal">What customers say</span>
+  <h2 class="section-title reveal">Real Reviews from Pune Regulars</h2>
+
+  <div class="reviews-meta reveal">
+    <div class="rating-big">4.5</div>
+    <div class="rating-right">
+      <div class="stars-row">★★★★½</div>
+      <div class="rating-count">Based on 500+ customer visits · Koregaon Park, Pune</div>
+    </div>
+  </div>
+
+  <div class="rgrid">
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">R</div>
+        <div><div class="rname">Rohit S.</div><div class="rrating">★★★★★</div></div>
+      </div>
+      <p class="rtext">"Came here around 12:30 AM and honestly didn't expect much, but the cold brew was actually solid. Quiet place too, not too crowded like other cafes in Koregaon Park."</p>
+      <span class="rcontext">Late-night work session</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">A</div>
+        <div><div class="rname">Ayesha K.</div><div class="rrating">★★★★☆</div></div>
+      </div>
+      <p class="rtext">"Good spot for late-night work. WiFi was decent, coffee was strong, and the vibe is calm. Only wish they had a few more snack options."</p>
+      <span class="rcontext">Work from cafe · regular visitor</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">K</div>
+        <div><div class="rname">Karan P.</div><div class="rrating">★★★★★</div></div>
+      </div>
+      <p class="rtext">"Tried the hazelnut latte and chocolate waffles — both were really good. The place has a nice dim vibe, perfect for dates or just chilling."</p>
+      <span class="rcontext">Date night</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">S</div>
+        <div><div class="rname">Sneha M.</div><div class="rrating">★★★★★</div></div>
+      </div>
+      <p class="rtext">"One of the few cafes in Pune that's actually open late and still serves fresh food. Pasta was better than expected."</p>
+      <span class="rcontext">First visit · now a regular</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">N</div>
+        <div><div class="rname">Neha V.</div><div class="rrating">★★★★★</div></div>
+      </div>
+      <p class="rtext">"Small place but aesthetic. Good for couples. Cold coffee + brownie combo is worth trying."</p>
+      <span class="rcontext">Couple visit · late night</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">R</div>
+        <div><div class="rname">Rahul D.</div><div class="rrating">★★★★★</div></div>
+      </div>
+      <p class="rtext">"Finally found a cafe in Koregaon Park that doesn't shut early. Coffee is strong, prices are reasonable."</p>
+      <span class="rcontext">Freelancer · works here 3–4x/week</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">A</div>
+        <div><div class="rname">Aditya R.</div><div class="rrating">★★★★☆</div></div>
+      </div>
+      <p class="rtext">"Went with friends at 1 AM. Not too loud, which I liked. Service was a bit slow but the food made up for it."</p>
+      <span class="rcontext">Group visit · 1 AM</span>
+    </div>
+    <div class="rcard reveal">
+      <div class="rcard-head">
+        <div class="ravatar">P</div>
+        <div><div class="rname">Priya J.</div><div class="rrating">★★★★★</div></div>
+      </div>
+      <p class="rtext">"Not a party place — more like a chill, quiet cafe. Perfect if you just want to sit and talk."</p>
+      <span class="rcontext">Couple · weeknight visit</span>
+    </div>
+  </div>
+</section>
+          <strong>Crowd Type</strong>
+          <span>Mostly late-night workers, freelancers, couples, and students. Not a loud group hangout spot — intentionally.</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">🅿️</div>
+        <div class="info-text">
+          <strong>Parking</strong>
+          <span>Street parking on Lane 7 after 9 PM. Two-wheelers can park right outside the cafe.</span>
+        </div>
+      </div>
+      <div class="info-row">
+        <div class="info-icon">📞</div>
+        <div class="info-text">
+          <strong>Reservations / Orders</strong>
+          <span>WhatsApp +91 90000 00000 — we reply within 5 minutes after 7 PM.</span>
+        </div>
+      </div>
+      <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20visit%20tonight%20-%20any%20tables%20available?" class="btn btn-whatsapp" target="_blank" rel="noopener" style="margin-top:.5rem;align-self:flex-start;">
+        Reserve a Table on WhatsApp
+      </a>
+    </div>
+
+    <div class="map-box reveal">
+      <!-- Replace content below with actual Google Maps iframe -->
+      <span class="map-pin">📍</span>
+      <strong style="color:var(--white);font-size:.9rem;">Midnight Brew Co.</strong>
+      <span>Lane 7, near Osho Garden</span>
+      <span>Koregaon Park, Pune 411001</span>
+      <span class="map-note">[ Paste your Google Maps embed here ]</span>
+    </div>
+  </div>
+</section>
+
+<!-- ─── LOCAL SEO PARAGRAPH ─── -->
+<section id="seo-section">
+  <div class="seo-text reveal">
+    <h2>A Late-Night Cafe in Koregaon Park That's Actually Worth It</h2>
+    <p>
+      Most cafes in Koregaon Park shut down by 11 PM or turn into loud social spots by 9. Midnight Brew Co. works differently — it's a quiet, work-friendly cafe on Lane 7, near Osho Garden, that stays open till 2 AM every night.
+    </p>
+    <p>
+      Whether you're a freelancer looking for a cafe to work from late in Pune, a couple wanting a low-key spot after dinner, or someone who just needs a strong coffee at midnight — the menu covers you from ₹140 (Espresso) to comfort food like pasta and waffles. No minimum spend, no rush.
+    </p>
+    <p>
+      If you've been searching for cafes open till 2 AM in Pune, or a quiet coffee shop in Koregaon Park with actual WiFi and charging points, this is the place. Lane 7 keeps it tucked away from the main strip noise — which is exactly why regulars keep coming back.
+    </p>
+  </div>
+</section>
+
+<!-- ─── FINAL CTA ─── -->
+<section id="fcta">
+  <h2 class="fcta-title">Still up?<br/>Come in tonight.</h2>
+  <p class="fcta-sub">Koregaon Park's late-night cafe is open right now. Coffee, food, a quiet table — till 2 AM.</p>
+  <div class="fcta-actions">
+    <a href="https://wa.me/919000000000?text=Hi!%20I%20want%20to%20order%20from%20Midnight%20Brew%20Co." class="btn btn-whatsapp" target="_blank" rel="noopener">
+      <svg width="17" height="17" viewBox="0 0 24 24" fill="currentColor"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51a4.67 4.67 0 00-.57-.01c-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479s1.065 2.875 1.213 3.074c.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></svg>
+      Order on WhatsApp
+    </a>
+    <a href="#visit-info" class="btn btn-outline">Get Directions</a>
+  </div>
+  <p class="fcta-note">Lane 7, near Osho Garden, Koregaon Park · Open till 2 AM · +91 90000 00000</p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <div class="flogo">Midnight <b>Brew</b> Co.</div>
+    <div class="fmeta">
+      <div class="open-pill"><span style="width:6px;height:6px;background:var(--green);border-radius:50%;display:inline-block;animation:blink 1.8s infinite;"></span> Open Tonight · 5 PM – 2 AM</div>
+      <div class="faddr">Lane 7, near Osho Garden, Koregaon Park, Pune – 411001</div>
+    </div>
+    <div class="fright">
+      <div>© 2025 Midnight Brew Co.</div>
+      <div>Late night cafe · Koregaon Park, Pune</div>
+    </div>
+  </div>
+</footer>
+
+<script>
+  // Mobile nav
+  document.getElementById('ham').addEventListener('click', () => document.getElementById('mob').classList.add('open'));
+  document.getElementById('mobClose').addEventListener('click', closeMob);
+  function closeMob() { document.getElementById('mob').classList.remove('open'); }
+
+  // Menu tabs
+  document.querySelectorAll('.tab').forEach(btn => {
+    btn.addEventListener('click', () => {
+      document.querySelectorAll('.tab').forEach(b => b.classList.remove('on'));
+      document.querySelectorAll('.menu-sec').forEach(s => s.classList.remove('on'));
+      btn.classList.add('on');
+      document.getElementById('t-' + btn.dataset.t).classList.add('on');
+    });
+  });
+
+  // Scroll reveal — lightweight IntersectionObserver only
+  const io = new IntersectionObserver(entries => {
+    entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); } });
+  }, { threshold: 0.07, rootMargin: '0px 0px -30px 0px' });
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+</script>
+</body>
+</html>
